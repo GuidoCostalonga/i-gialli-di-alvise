@@ -224,6 +224,22 @@ p { margin: 0 0 1em; }
 .domanda-risposta p:last-child { margin-bottom: 0; }
 .dopo-riquadro { margin-top: 1.6rem !important; }
 
+/* Glossario */
+.cerca label { display: block; font-family: var(--titolo); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--rosso); margin-bottom: .4rem; }
+.cerca input { width: min(100%, 26rem); font: inherit; font-size: 1.2rem; padding: .7rem .9rem; border: 1px solid var(--china); background: #fff; color: var(--china); border-radius: 0; }
+.pagina-testa .gruppi { font-size: 1.05rem; color: var(--grigio); margin-top: 1rem; max-width: none; }
+.nessuna { font-family: var(--mano); font-size: 1.6rem !important; color: var(--rosso) !important; }
+.glossario { padding-top: clamp(2rem, 5vw, 3.5rem); padding-bottom: clamp(2rem, 5vw, 3.5rem); }
+.glossario[hidden], .voce[hidden] { display: none; }
+.glossario .sezione__testa { margin-bottom: 1.5rem; }
+.glossario .sezione__testa h2 { font-size: clamp(1.6rem, 3.6vw, 2.3rem); max-width: none; }
+.voci { display: grid; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); gap: 1rem; margin-top: 0; margin-bottom: 0; }
+.voce { background: var(--carta); border: 1px solid var(--china); padding: 1.1rem 1.3rem; scroll-margin-top: 6rem; }
+.voce:target { box-shadow: 6px 6px 0 var(--rosso); }
+.voce dt { font-family: var(--titolo); font-size: 1.2rem; text-transform: uppercase; margin-bottom: .4rem; }
+.voce dd { margin: 0; }
+.piede__menu a { color: #fff; }
+
 /* Lettura facilitata: righello e voce */
 .lf-apri { position: fixed; right: 1rem; bottom: 1rem; z-index: 60; background: var(--china); color: #fff; border: 2px solid #fff; border-radius: 2rem; padding: .7rem 1.1rem; font-family: var(--titolo); font-size: .85rem; letter-spacing: .03em; text-transform: uppercase; cursor: pointer; box-shadow: 0 4px 14px rgba(27, 26, 24, .35); }
 .lf-apri:hover, .lf-apri[aria-expanded="true"] { background: var(--rosso); }
