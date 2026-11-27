@@ -141,6 +141,13 @@ p { margin: 0 0 1em; }
 .riquadro p { max-width: 46rem; }
 .fonti { font-size: 1.05rem; color: var(--grigio); margin: 1.4rem 0 0; padding-top: 1rem; border-top: 1px solid var(--filetto); }
 
+/* Come è nata la serie */
+.origine { font-size: 1.28rem; }
+.origine > p { max-width: 40rem; }
+.citazione { margin: 2rem 0; padding: 0 0 0 1.4rem; border-left: 6px solid var(--rosso); max-width: 46rem; }
+.citazione p { font-size: clamp(1.4rem, 2.8vw, 1.85rem); line-height: 1.3; font-style: italic; margin: 0; }
+.citazione footer { color: var(--rosso); margin-top: .8rem; }
+
 /* Autore */
 .autore { max-width: 40rem; margin-left: max(1rem, calc((100% - var(--largo)) / 2)) !important; font-size: 1.28rem; }
 .sezione > .autore { margin-left: auto !important; margin-right: auto; max-width: var(--largo); }
