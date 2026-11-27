@@ -31,6 +31,7 @@
     return b;
   };
   const bRighello = interruttore('Righello di lettura', 'Una fascia chiara segue il dito o il mouse e scurisce il resto.');
+  const bCarattere = interruttore('Carattere ad alta leggibilità', 'Cambia i testi in OpenDyslexic, con righe più distanziate e senza corsivi.');
   const bVoce = interruttore('Voce che legge', 'Tocca un testo per ascoltarlo, oppure usa «Ascolta» accanto ai titoli.');
   const riga = crea('div', { class: 'lf-riga' });
   const bLento = crea('button', { class: 'lf-piccolo', type: 'button', 'aria-pressed': 'false' }, 'Voce più lenta');
@@ -38,7 +39,7 @@
   const bAlto = crea('button', { class: 'lf-piccolo', type: 'button', 'aria-pressed': 'false' }, 'Righello più alto');
   riga.append(bAlto, bLento, bFerma);
   const avviso = crea('p', { class: 'lf-avviso', role: 'status' });
-  pannello.append(crea('p', { class: 'lf-titolo' }, 'Lettura facilitata'), bRighello, bVoce, riga, avviso);
+  pannello.append(crea('p', { class: 'lf-titolo' }, 'Lettura facilitata'), bCarattere, bRighello, bVoce, riga, avviso);
   document.body.append(apri, pannello);
   apri.addEventListener('click', () => {
     const aperto = pannello.hasAttribute('hidden');
@@ -50,6 +51,17 @@
     if (!pannello.hasAttribute('hidden')) { pannello.setAttribute('hidden', ''); apri.setAttribute('aria-expanded', 'false'); apri.focus(); }
     ferma();
   });
+
+  // ---------- carattere ad alta leggibilità ----------
+  let carattere = false;
+  const impostaCarattere = (acceso) => {
+    carattere = acceso;
+    bCarattere.setAttribute('aria-pressed', String(acceso));
+    document.documentElement.classList.toggle('lf-carattere', acceso);
+    memoria.scrivi('carattere', acceso ? '1' : '0');
+    if (righello) disegna();
+  };
+  bCarattere.addEventListener('click', () => impostaCarattere(!carattere));
 
   // ---------- righello ----------
   const sopra = crea('div', { class: 'lf-ombra lf-ombra--sopra', 'aria-hidden': 'true' });
@@ -157,6 +169,7 @@
   // ---------- preferenze salvate ----------
   if (memoria.leggi('alto') === '1') { alto = true; bAlto.setAttribute('aria-pressed', 'true'); }
   if (memoria.leggi('lento') === '1') { lento = true; bLento.setAttribute('aria-pressed', 'true'); }
+  if (memoria.leggi('carattere') === '1') impostaCarattere(true);
   if (memoria.leggi('righello') === '1') impostaRighello(true);
   if (haVoce && memoria.leggi('voce') === '1') impostaVoce(true);
 })();
