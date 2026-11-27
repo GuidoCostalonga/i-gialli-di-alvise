@@ -46,10 +46,6 @@ p { margin: 0 0 1em; }
 }
 .testata__marchio, .piede__marchio { font-family: var(--titolo); font-size: 1.05rem; color: var(--china); text-decoration: none; text-transform: uppercase; letter-spacing: .02em; white-space: nowrap; }
 .testata__marchio span, .piede__marchio span { color: var(--rosso); }
-.testata nav { display: flex; gap: 1.3rem; overflow-x: auto; scrollbar-width: none; }
-.testata nav::-webkit-scrollbar { display: none; }
-.testata nav a { color: var(--china); text-decoration: none; font-size: 1.02rem; white-space: nowrap; padding: .2rem 0; border-bottom: 2px solid transparent; }
-.testata nav a:hover { border-bottom-color: var(--rosso); }
 
 /* Bottoni */
 .bottone {
@@ -235,7 +231,6 @@ p { margin: 0 0 1em; }
 .voce:target { box-shadow: 6px 6px 0 var(--rosso); }
 .voce dt { font-family: var(--titolo); font-size: 1.2rem; text-transform: uppercase; margin-bottom: .4rem; }
 .voce dd { margin: 0; }
-.piede__menu a { color: #fff; }
 
 /* Ringraziamento */
 .lettera { max-width: 40rem; font-size: 1.32rem; line-height: 1.6; border-left: 6px solid var(--rosso); padding-left: clamp(1rem, 4vw, 2rem); margin-left: max(0px, calc((100% - var(--largo)) / 2)) !important; margin-right: auto !important; }
@@ -284,7 +279,8 @@ p { margin: 0 0 1em; }
 .sezione > .fonti { max-width: 44rem; }
 
 /* Menu a tendina per il telefono */
-.testata__mobile { display: none; align-items: center; gap: .5rem; }
+.testata__mobile { display: flex; align-items: center; gap: .5rem; flex-shrink: 0; }
+.tendina { position: relative; }
 .testata__giochi { background: var(--rosso); color: #fff; text-decoration: none; font-family: var(--titolo); font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; padding: .55rem .8rem; border: 2px solid var(--rosso); border-radius: 2px; }
 .testata__giochi:hover { background: var(--china); border-color: var(--china); color: #fff; }
 .tendina summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: .5rem; font-family: var(--titolo); font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; padding: .55rem .8rem; border: 2px solid var(--china); border-radius: 2px; color: var(--china); background: var(--carta); user-select: none; }
@@ -292,15 +288,17 @@ p { margin: 0 0 1em; }
 .tendina[open] summary { background: var(--china); color: #fff; }
 .tendina__righe { width: 1.05rem; height: .8rem; border-top: 2px solid currentColor; border-bottom: 2px solid currentColor; position: relative; }
 .tendina__righe::after { content: ""; position: absolute; left: 0; right: 0; top: calc(50% - 1px); border-top: 2px solid currentColor; }
-.tendina ul { position: absolute; left: 0; right: 0; top: 100%; margin: 0; padding: .4rem 1rem 1rem; list-style: none; background: var(--carta); border-bottom: 3px solid var(--china); box-shadow: 0 14px 24px rgba(27, 26, 24, .25); max-height: calc(100vh - 4rem); overflow-y: auto; }
+.tendina ul { position: absolute; right: 0; top: calc(100% + .75rem); width: 21rem; margin: 0; padding: .3rem 1.1rem .6rem; list-style: none; background: var(--carta); border: 1px solid var(--china); box-shadow: 6px 6px 0 var(--china); max-height: calc(100vh - 5rem); overflow-y: auto; }
+.tendina li:last-child { border-bottom: 0; }
 .tendina li { border-bottom: 1px solid var(--filetto); }
 .tendina li a { display: block; padding: .85rem .2rem; color: var(--china); text-decoration: none; font-size: 1.2rem; }
 .tendina li a:hover { color: var(--rosso); }
 .tendina li.sotto a { padding: .6rem .2rem .6rem 1.4rem; font-size: 1.08rem; font-style: italic; color: var(--grigio); }
 .tendina li.sotto a::before { content: "· "; color: var(--rosso); font-style: normal; }
 @media (max-width: 46rem) {
-  .testata > nav { display: none; }
-  .testata__mobile { display: flex; gap: .4rem; flex-shrink: 0; }
+  .testata__mobile { gap: .4rem; }
+  .tendina { position: static; }
+  .tendina ul { left: 0; right: 0; top: 100%; width: auto; padding: .4rem 1rem 1rem; border: 0; border-bottom: 3px solid var(--china); box-shadow: 0 14px 24px rgba(27, 26, 24, .25); max-height: calc(100vh - 4rem); }
   .testata { gap: .5rem; }
   .testata__marchio { font-size: .9rem; letter-spacing: 0; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
   .testata__giochi, .tendina summary { padding: .5rem .6rem; font-size: .78rem; }
