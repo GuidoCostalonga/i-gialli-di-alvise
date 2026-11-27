@@ -22,12 +22,27 @@
 <a class="salta" href="#contenuto">Vai al contenuto</a>
 <header class="testata">
   <a class="testata__marchio" href="../">I gialli di <span>Alvise</span></a>
-  <nav aria-label="Sezioni del sito">
-    <a href="../#volumi">I libri</a>
-    <a href="../#famiglia">La famiglia</a>
-    <a href="../#assaggio">Primo capitolo</a>
-    <a href="./">Giochi</a>
-  </nav>
+  <div class="testata__mobile">
+    <a class="testata__giochi" href="../giochi/">Giochi</a>
+    <details class="tendina">
+      <summary><span class="tendina__righe" aria-hidden="true"></span>Menu</summary>
+      <nav aria-label="Sezioni e pagine del sito">
+      <ul>
+        <li><a href="../#volumi">I libri</a></li>
+        <li class="sotto"><a href="../libri/l-orologio-di-alexanderplatz/">L’orologio di Alexanderplatz</a></li>
+        <li class="sotto"><a href="../libri/le-transenne-del-louvre/">Le transenne del Louvre</a></li>
+        <li class="sotto"><a href="../libri/cinque-orologi-da-otto-euro/">Cinque orologi da otto euro</a></li>
+        <li><a href="../#famiglia">La famiglia Bertolin</a></li>
+        <li><a href="../#assaggio">Il primo capitolo</a></li>
+        <li><a href="../genitori-e-insegnanti/">Genitori e insegnanti</a></li>
+        <li><a href="../#origine">Come è nata la serie</a></li>
+        <li><a href="../#autore">L’autore</a></li>
+        <li><a href="../glossario/">Glossario</a></li>
+        <li><a href="../grazie-aid/">Grazie ad AID</a></li>
+      </ul>
+      </nav>
+    </details>
+  </div>
 </header>
 <main id="contenuto">
   <div class="giochi-testa">
@@ -48,7 +63,6 @@
 </main>
 <footer class="piede">
   <p class="piede__marchio">I gialli di <span>Alvise</span></p>
-  <p class="piede__menu"><a href="../glossario/">Glossario</a> · <a href="../genitori-e-insegnanti/">Genitori e insegnanti</a> · <a href="../giochi/">Giochi</a> · <a href="../grazie-aid/">Grazie ad AID</a></p>
   <p>© 2026 Guido Costalonga. Tutti i diritti riservati. Disegni realizzati con strumenti di intelligenza artificiale.</p>
   <p>I giochi funzionano sul tuo dispositivo: non raccolgono dati e non salvano punteggi in rete.</p>
 </footer>
