@@ -103,31 +103,59 @@
     copia.querySelectorAll('.lf-ascolta, button').forEach((x) => x.remove());
     return copia.textContent.replace(/\s+/g, ' ').replace(/[«»]/g, '').trim();
   };
+  // Riferimenti alle frasi in lettura: senza, alcuni navigatori perdono gli eventi.
+  const vive = [];
+  let sveglia = 0;
+  const messaggio = crea('p', { class: 'lf-messaggio', role: 'status', hidden: '' });
+  document.body.append(messaggio);
+  const diMessaggio = (testo) => { messaggio.textContent = testo; messaggio.toggleAttribute('hidden', !testo); };
+  const occupata = () => haVoce && (speechSynthesis.speaking || speechSynthesis.pending);
   function ferma() {
     turno++;
-    if (haVoce) speechSynthesis.cancel();
+    clearTimeout(sveglia);
+    // Su iPhone un «cancel» a vuoto, subito prima di parlare, può azzittire anche la frase nuova.
+    if (occupata()) speechSynthesis.cancel();
+    vive.length = 0;
     document.querySelectorAll('.lf-letto').forEach((x) => x.classList.remove('lf-letto'));
   }
   const leggi = (elementi) => {
+    const eraOccupata = occupata();
     ferma();
     const mio = turno;
     const coda = elementi.filter((el) => visibile(el) && testoDi(el));
-    const prossimo = () => {
+    if (!coda.length) return;
+    let partita = false;
+    const avvia = () => {
       if (mio !== turno) return;
-      document.querySelectorAll('.lf-letto').forEach((x) => x.classList.remove('lf-letto'));
-      const el = coda.shift();
-      if (!el) return;
-      el.classList.add('lf-letto');
-      if (coda.length || el.getBoundingClientRect().bottom > window.innerHeight || el.getBoundingClientRect().top < 0) el.scrollIntoView({ block: 'center', behavior: 'smooth' });
-      const u = new SpeechSynthesisUtterance(testoDi(el));
-      u.lang = 'it-IT';
-      if (italiana && italiana instanceof SpeechSynthesisVoice) u.voice = italiana;
-      u.rate = lento ? 0.75 : 0.95;
-      u.onend = prossimo;
-      u.onerror = () => { if (mio === turno) ferma(); };
-      speechSynthesis.speak(u);
+      diMessaggio('');
+      try { speechSynthesis.resume(); } catch (e) { /* non serve su tutti i navigatori */ }
+      // Tutte le frasi entrano in coda subito, dentro il tocco dell'utente:
+      // iPhone non lascia partire una voce avviata più tardi da sola.
+      coda.forEach((el, n) => {
+        const u = new SpeechSynthesisUtterance(testoDi(el));
+        u.lang = 'it-IT';
+        try { if (italiana) u.voice = italiana; } catch (e) { /* resta la lingua indicata */ }
+        u.rate = lento ? 0.75 : 0.95;
+        u.onstart = () => {
+          if (mio !== turno) return;
+          partita = true;
+          diMessaggio('');
+          document.querySelectorAll('.lf-letto').forEach((x) => x.classList.remove('lf-letto'));
+          el.classList.add('lf-letto');
+          const q = el.getBoundingClientRect();
+          if (coda.length > 1 || q.bottom > window.innerHeight || q.top < 0) el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        };
+        u.onend = () => { if (mio === turno) { el.classList.remove('lf-letto'); if (n === coda.length - 1) vive.length = 0; } };
+        u.onerror = () => { if (mio === turno) el.classList.remove('lf-letto'); };
+        vive.push(u);
+        speechSynthesis.speak(u);
+      });
+      sveglia = setTimeout(() => {
+        if (mio === turno && !partita) diMessaggio('La voce non parte. Alza il volume e, su iPhone, togli la modalità silenziosa con il tasto laterale. Poi tocca di nuovo il testo.');
+      }, 3000);
     };
-    prossimo();
+    // Se stava già parlando, lascia il tempo di fermarsi prima di ripartire.
+    if (eraOccupata) setTimeout(avvia, 150); else avvia();
   };
   const blocchiDi = (contenitore) => [...contenitore.querySelectorAll(BLOCCHI)].filter((el) => !el.closest('.lf-pannello') && !el.querySelector(BLOCCHI));
   const mettiPulsanti = () => {
@@ -152,7 +180,7 @@
     speechSynthesis.addEventListener?.('voiceschanged', scegliVoce);
     bVoce.addEventListener('click', () => impostaVoce(!voce));
     bLento.addEventListener('click', () => { lento = !lento; bLento.setAttribute('aria-pressed', String(lento)); memoria.scrivi('lento', lento ? '1' : '0'); });
-    bFerma.addEventListener('click', ferma);
+    bFerma.addEventListener('click', () => { ferma(); diMessaggio(''); });
     document.addEventListener('click', (e) => {
       if (!voce || e.target.closest(INTERATTIVI) || e.target.closest('.lf-pannello')) return;
       const el = e.target.closest(BLOCCHI);
