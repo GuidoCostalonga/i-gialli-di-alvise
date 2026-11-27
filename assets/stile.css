@@ -262,6 +262,8 @@ p { margin: 0 0 1em; }
 .lf-piccolo[hidden] { display: none; }
 .lf-avviso { margin: .6rem 0 0; color: var(--rosso-scuro); font-size: .95rem; }
 .lf-avviso:empty { display: none; }
+.lf-messaggio { position: fixed; left: 1rem; right: 1rem; bottom: 4.6rem; z-index: 61; margin: 0 auto; max-width: 30rem; background: var(--china); color: #fff; padding: .9rem 1.1rem; font-size: 1.05rem; line-height: 1.35; border-left: 6px solid var(--rosso); box-shadow: 0 6px 18px rgba(27, 26, 24, .35); }
+.lf-messaggio[hidden] { display: none; }
 .lf-ombra { position: fixed; left: 0; right: 0; z-index: 50; background: rgba(27, 26, 24, .5); pointer-events: none; }
 .lf-ombra--sopra { top: 0; }
 .lf-ombra--sotto { bottom: 0; }

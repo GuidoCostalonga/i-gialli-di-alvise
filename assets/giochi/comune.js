@@ -25,13 +25,18 @@ const G = (() => {
     return a;
   };
   const aspetta = (ms) => new Promise((r) => setTimeout(r, ms));
+  let inVoce = null;
   const parla = (testo) => {
     if (!('speechSynthesis' in window)) return;
-    speechSynthesis.cancel();
+    // Su iPhone un «cancel» a vuoto, subito prima di parlare, può azzittire anche la frase nuova.
+    const eraOccupata = speechSynthesis.speaking || speechSynthesis.pending;
+    if (eraOccupata) speechSynthesis.cancel();
     const u = new SpeechSynthesisUtterance(testo.replace(/[«»]/g, ''));
     u.lang = 'it-IT';
     u.rate = 0.95;
-    speechSynthesis.speak(u);
+    inVoce = u;
+    const via = () => { try { speechSynthesis.resume(); } catch (e) { /* non serve ovunque */ } speechSynthesis.speak(u); };
+    if (eraOccupata) setTimeout(via, 150); else via();
   };
   let ultimo = '';
   const fumetto = (chi, testo) => {
