@@ -14,6 +14,14 @@
   const BLOCCHI = 'h1, h2, h3, p, li, figcaption';
   const INTERATTIVI = 'a, button, summary, input, label, select, .oggetto, .persona, .scena';
 
+  // ---------- menu a tendina del telefono ----------
+  const tendina = document.querySelector('.tendina');
+  if (tendina) {
+    tendina.addEventListener('click', (e) => { if (e.target.closest('a')) tendina.open = false; });
+    document.addEventListener('click', (e) => { if (tendina.open && !tendina.contains(e.target)) tendina.open = false; });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && tendina.open) { tendina.open = false; tendina.querySelector('summary').focus(); } });
+  }
+
   // ---------- pannello ----------
   const apri = crea('button', { class: 'lf-apri', type: 'button', 'aria-expanded': 'false', 'aria-controls': 'lf-pannello' }, 'Lettura facilitata');
   const pannello = crea('div', { class: 'lf-pannello', id: 'lf-pannello', hidden: '' });

@@ -81,7 +81,7 @@
 .pose.blocco .oggetto { cursor: default; }
 
 @media (max-width: 46rem) {
-  .gioco > .pannello:first-child { top: 5.4rem; padding: .7rem .9rem; }
+  .gioco > .pannello:first-child { top: 3.9rem; padding: .7rem .9rem; }
   .fumetto { min-height: 4.5rem; }
   .fumetto__testo { font-size: 1.1rem; }
   .due-colonne { grid-template-columns: 1fr; }
