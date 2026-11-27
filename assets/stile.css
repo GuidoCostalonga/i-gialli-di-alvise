@@ -153,9 +153,14 @@ p { margin: 0 0 1em; }
 .autore__foto { width: 100%; border: 1px solid var(--china); box-shadow: 6px 6px 0 var(--rosso); }
 .autore__testo p:last-child { margin-bottom: 0; }
 
+.contatti { margin-top: 1.6rem; padding: 1.1rem 1.3rem; background: var(--carta); border: 1px solid var(--china); border-left: 8px solid var(--rosso); }
+.contatti__titolo { display: block; font-family: var(--titolo); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--rosso); margin-bottom: .3rem; }
+.contatti a { font-weight: 600; white-space: nowrap; }
+
 /* Piede */
 .piede { background: var(--china); color: #d8d4cb; padding: 3rem max(1rem, calc((100vw - var(--largo)) / 2)); font-size: 1rem; }
 .piede p { max-width: 44rem; margin-bottom: .7rem; }
+.piede a { color: #fff; }
 .piede__marchio { color: #fff; font-size: 1.3rem; margin-bottom: 1.2rem !important; }
 
 @media (max-width: 46rem) {
