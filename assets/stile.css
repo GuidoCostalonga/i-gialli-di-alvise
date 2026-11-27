@@ -188,7 +188,8 @@ p { margin: 0 0 1em; }
 .libro .volume:nth-child(even) .volume__copertina { order: 0; }
 @media (max-width: 46rem) { .libro .volume, .libro .volume:nth-child(even) { grid-template-columns: 1fr; } }
 .libro { padding-top: clamp(1.5rem, 4vw, 3rem); }
-.libro h1 { font-size: clamp(2rem, 5.4vw, 3.6rem); text-transform: uppercase; }
+.libro h1 { font-size: clamp(1.7rem, 4.4vw, 3.6rem); text-transform: uppercase; }
+.volume__testo { min-width: 0; }
 .volume h3 a { color: inherit; text-decoration: none; }
 .volume h3 a:hover { color: var(--rosso); }
 .volume__testo .bottone { margin: 0 .4rem .5rem 0; }
@@ -305,6 +306,18 @@ p { margin: 0 0 1em; }
   html { scroll-padding-top: 4.5rem; }
 }
 @media (max-width: 22.5rem) {
-  body { overflow-x: clip; }
+  .schede, .altri, .voci, .dati { grid-template-columns: minmax(0, 1fr); }
+  .scheda__testa { grid-template-columns: 4.6rem minmax(0, 1fr); gap: .7rem; }
+  .scheda h3 { font-size: 1.15rem; padding-right: 0; overflow-wrap: anywhere; }
+  .scheda__eta { position: static; transform: none; }
+  .altri a { grid-template-columns: 4.2rem minmax(0, 1fr); }
+  .altri strong { font-size: 1rem; overflow-wrap: anywhere; }
+  .volume h3 { font-size: 1.3rem; }
+  .libro h1 { font-size: 1.45rem; }
+  .volume h3, .libro h1, .apertura h1, .gancio { overflow-wrap: anywhere; }
+  .volume__testo { min-width: 0; }
   .testata__marchio { font-size: .8rem; }
 }
+
+/* Nessuno sbordo laterale da elementi ruotati o ombre */
+main { overflow-x: clip; }
