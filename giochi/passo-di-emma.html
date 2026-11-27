@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Il passo di Emma · I gialli di Alvise</title>
+<meta name="description" content="Emma fa una sequenza di passi. Tu la rifai uguale, ogni volta più lunga.">
+<link rel="canonical" href="https://igiallidialvise.it/giochi/passo-di-emma.html">
+<meta property="og:title" content="Il passo di Emma · I gialli di Alvise">
+<meta property="og:description" content="Emma fa una sequenza di passi. Tu la rifai uguale, ogni volta più lunga.">
+<meta property="og:image" content="https://igiallidialvise.it/assets/img/ritratto-emma.jpg">
+<link rel="icon" href="../assets/icona.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/stile.css">
+<link rel="stylesheet" href="../assets/giochi.css">
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<header class="testata">
+  <a class="testata__marchio" href="../">I gialli di <span>Alvise</span></a>
+  <nav aria-label="Sezioni del sito">
+    <a href="../#volumi">I libri</a>
+    <a href="../#famiglia">La famiglia</a>
+    <a href="../#assaggio">Primo capitolo</a>
+    <a href="./">Giochi</a>
+  </nav>
+</header>
+<main id="contenuto">
+  <div class="giochi-testa">
+    <a class="indietro" href="./">Tutti i giochi</a>
+    <p class="occhiello">A ritmo</p>
+    <h1>Il passo di Emma</h1>
+    <p id="regole">Emma ti mostra una sequenza di passi, ognuno con il suo suono. Quando ha finito, tocca i passi nello stesso ordine. Ogni volta se ne aggiunge uno.</p>
+    <p><button class="ascolta" type="button" data-ascolta="#regole">Ascolta le regole</button></p>
+  </div>
+  <div class="gioco">
+    <div class="pannello"><div class="fumetto" id="fumetto" aria-live="polite"></div>
+      <p style="margin:.6rem 0 0"><button class="ascolta" type="button" data-ascolta="fumetto">Ascolta</button></p></div>
+    <div class="barra"><span class="conta" id="conta">Passi: 0</span><span class="spazio"></span><span class="conta" id="record"></span></div>
+    <div class="pannello"><div class="pose blocco" id="pose">
+      <button class="oggetto" type="button" aria-label="Braccia in alto"><img src="../assets/img/giochi/emma-braccia.jpg" alt=""></button>
+      <button class="oggetto" type="button" aria-label="Giro"><img src="../assets/img/giochi/emma-giro.jpg" alt=""></button>
+      <button class="oggetto" type="button" aria-label="Passo di lato"><img src="../assets/img/giochi/emma-passo.jpg" alt=""></button>
+      <button class="oggetto" type="button" aria-label="Salto"><img src="../assets/img/giochi/emma-salto.jpg" alt=""></button></div>
+      <p style="text-align:center;margin:1.2rem 0 0"><button class="bottone tasto" id="parti" type="button">Comincia</button></p></div>
+  </div>
+</main>
+<footer class="piede">
+  <p class="piede__marchio">I gialli di <span>Alvise</span></p>
+  <p>© 2026 Guido Costalonga. Tutti i diritti riservati. Disegni realizzati con strumenti di intelligenza artificiale.</p>
+  <p>I giochi funzionano sul tuo dispositivo: non raccolgono dati e non salvano punteggi in rete.</p>
+</footer>
+<script src="../assets/giochi/comune.js"></script>
+<script src="../assets/giochi/passo.js"></script>
+<script src="../assets/lettura.js" defer></script>
+</body>
+</html>

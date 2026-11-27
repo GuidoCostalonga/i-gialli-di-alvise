@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quattro valigie e mezza · I gialli di Alvise</title>
+<meta name="description" content="Riempi le valigie seguendo la lista. Attento a quello che gli altri provano a infilarci.">
+<link rel="canonical" href="https://igiallidialvise.it/giochi/valigie.html">
+<meta property="og:title" content="Quattro valigie e mezza · I gialli di Alvise">
+<meta property="og:description" content="Riempi le valigie seguendo la lista. Attento a quello che gli altri provano a infilarci.">
+<meta property="og:image" content="https://igiallidialvise.it/assets/img/giochi/valigia.jpg">
+<link rel="icon" href="../assets/icona.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/stile.css">
+<link rel="stylesheet" href="../assets/giochi.css">
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<header class="testata">
+  <a class="testata__marchio" href="../">I gialli di <span>Alvise</span></a>
+  <nav aria-label="Sezioni del sito">
+    <a href="../#volumi">I libri</a>
+    <a href="../#famiglia">La famiglia</a>
+    <a href="../#assaggio">Primo capitolo</a>
+    <a href="./">Giochi</a>
+  </nav>
+</header>
+<main id="contenuto">
+  <div class="giochi-testa">
+    <a class="indietro" href="./">Tutti i giochi</a>
+    <p class="occhiello">La lista della mamma</p>
+    <h1>Quattro valigie e mezza</h1>
+    <p id="regole">La lista della mamma è qui sotto. Tocca gli oggetti giusti per metterli in valigia. Qualcuno in famiglia prova a infilare cose che non servono: la mamma se ne accorge sempre.</p>
+    <p><button class="ascolta" type="button" data-ascolta="#regole">Ascolta le regole</button></p>
+  </div>
+  <div class="gioco">
+    <div class="pannello"><div class="fumetto" id="fumetto" aria-live="polite"></div>
+      <p style="margin:.6rem 0 0"><button class="ascolta" type="button" data-ascolta="fumetto">Ascolta</button></p></div>
+    <div class="barra"><span class="conta" id="conta"></span><span class="spazio"></span><button class="bottone bottone--chiaro tasto" id="ancora" type="button">Ricomincia</button></div>
+    <div class="due-colonne">
+      <div class="pannello"><h2>In giro per casa</h2><div class="griglia" id="stanza"></div></div>
+      <div class="pannello"><h2>La lista</h2><ul class="lista" id="lista"></ul>
+        <p style="margin:1rem 0 0"><button class="bottone tasto" id="respira" type="button" hidden>Respirare</button></p></div>
+    </div>
+    <div class="pannello esito" id="fine" hidden><h2>Si parte</h2><p id="fine-testo"></p><p><a class="bottone" href="./">Altri giochi</a></p></div>
+  </div>
+</main>
+<footer class="piede">
+  <p class="piede__marchio">I gialli di <span>Alvise</span></p>
+  <p>© 2026 Guido Costalonga. Tutti i diritti riservati. Disegni realizzati con strumenti di intelligenza artificiale.</p>
+  <p>I giochi funzionano sul tuo dispositivo: non raccolgono dati e non salvano punteggi in rete.</p>
+</footer>
+<script src="../assets/giochi/comune.js"></script>
+<script src="../assets/giochi/valigie.js"></script>
+<script src="../assets/lettura.js" defer></script>
+</body>
+</html>

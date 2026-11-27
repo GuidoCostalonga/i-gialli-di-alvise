@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Due secondi · I gialli di Alvise</title>
+<meta name="description" content="Guarda la stanza, poi di’ che cosa manca. Otto stanze, sempre più piene.">
+<link rel="canonical" href="https://igiallidialvise.it/giochi/due-secondi.html">
+<meta property="og:title" content="Due secondi · I gialli di Alvise">
+<meta property="og:description" content="Guarda la stanza, poi di’ che cosa manca. Otto stanze, sempre più piene.">
+<meta property="og:image" content="https://igiallidialvise.it/assets/img/ritratto-elena.jpg">
+<link rel="icon" href="../assets/icona.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/stile.css">
+<link rel="stylesheet" href="../assets/giochi.css">
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<header class="testata">
+  <a class="testata__marchio" href="../">I gialli di <span>Alvise</span></a>
+  <nav aria-label="Sezioni del sito">
+    <a href="../#volumi">I libri</a>
+    <a href="../#famiglia">La famiglia</a>
+    <a href="../#assaggio">Primo capitolo</a>
+    <a href="./">Giochi</a>
+  </nav>
+</header>
+<main id="contenuto">
+  <div class="giochi-testa">
+    <a class="indietro" href="./">Tutti i giochi</a>
+    <p class="occhiello">Lo sguardo della mamma</p>
+    <h1>Due secondi</h1>
+    <p id="regole">Guarda gli oggetti finché restano sul tavolo. Poi uno sparisce e gli altri cambiano posto: tocca quello che manca. Se vuoi più calma, scegli «Più tempo».</p>
+    <p><button class="ascolta" type="button" data-ascolta="#regole">Ascolta le regole</button></p>
+  </div>
+  <div class="gioco">
+    <div class="pannello"><div class="fumetto" id="fumetto" aria-live="polite"></div>
+      <p style="margin:.6rem 0 0"><button class="ascolta" type="button" data-ascolta="fumetto">Ascolta</button></p></div>
+    <div class="pannello" id="inizio"><p><label><input type="checkbox" id="lento"> Più tempo per guardare</label></p><p style="margin:0"><button class="bottone tasto" id="parti" type="button">Comincia</button></p></div>
+    <div id="gioco" hidden>
+      <div class="barra"><span class="conta" id="livello"></span><span class="spazio"></span><span class="conta" id="conta"></span></div>
+      <div class="pannello"><div class="griglia" id="tavolo" aria-live="polite"></div></div>
+      <div class="pannello" id="domanda" hidden><h2>Che cosa manca?</h2><div class="griglia" id="scelte"></div>
+        <p style="margin:1rem 0 0"><button class="bottone tasto" id="avanti" type="button" hidden>Prossima stanza</button></p></div>
+    </div>
+    <div class="pannello esito" id="fine" hidden><h2>Fine del giro</h2><p id="fine-testo"></p><p><button class="bottone bottone--chiaro tasto" id="ancora" type="button">Rigioca</button> <a class="bottone" href="./">Altri giochi</a></p></div>
+  </div>
+</main>
+<footer class="piede">
+  <p class="piede__marchio">I gialli di <span>Alvise</span></p>
+  <p>© 2026 Guido Costalonga. Tutti i diritti riservati. Disegni realizzati con strumenti di intelligenza artificiale.</p>
+  <p>I giochi funzionano sul tuo dispositivo: non raccolgono dati e non salvano punteggi in rete.</p>
+</footer>
+<script src="../assets/giochi/comune.js"></script>
+<script src="../assets/giochi/due-secondi.js"></script>
+<script src="../assets/lettura.js" defer></script>
+</body>
+</html>

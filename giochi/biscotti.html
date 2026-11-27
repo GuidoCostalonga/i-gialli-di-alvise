@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chi ha finito i biscotti? · I gialli di Alvise</title>
+<meta name="description" content="La scatola è vuota. Ognuno ha visto una cosa sola: mettile insieme.">
+<link rel="canonical" href="https://igiallidialvise.it/giochi/biscotti.html">
+<meta property="og:title" content="Chi ha finito i biscotti? · I gialli di Alvise">
+<meta property="og:description" content="La scatola è vuota. Ognuno ha visto una cosa sola: mettile insieme.">
+<meta property="og:image" content="https://igiallidialvise.it/assets/img/giochi/biscotti.jpg">
+<link rel="icon" href="../assets/icona.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/stile.css">
+<link rel="stylesheet" href="../assets/giochi.css">
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<header class="testata">
+  <a class="testata__marchio" href="../">I gialli di <span>Alvise</span></a>
+  <nav aria-label="Sezioni del sito">
+    <a href="../#volumi">I libri</a>
+    <a href="../#famiglia">La famiglia</a>
+    <a href="../#assaggio">Primo capitolo</a>
+    <a href="./">Giochi</a>
+  </nav>
+</header>
+<main id="contenuto">
+  <div class="giochi-testa">
+    <a class="indietro" href="./">Tutti i giochi</a>
+    <p class="occhiello">Un giallo in cucina</p>
+    <h1>Chi ha finito i biscotti?</h1>
+    <p id="regole">La scatola dei biscotti è vuota. Tocca i familiari per sentire che cosa hanno visto: ognuno ha notato una cosa sola. Quando ne hai sentiti almeno quattro, puoi dire chi è stato.</p>
+    <p><button class="ascolta" type="button" data-ascolta="#regole">Ascolta le regole</button></p>
+  </div>
+  <div class="gioco">
+    <div class="pannello"><div class="fumetto" id="fumetto" aria-live="polite"></div>
+      <p style="margin:.6rem 0 0"><button class="ascolta" type="button" data-ascolta="fumetto">Ascolta</button></p></div>
+    <div class="pannello"><h2>Chi vuoi sentire? <span class="conta" id="conta">0 su 6</span></h2><div class="persone" id="testimoni"></div></div>
+    <div class="pannello"><h2>Il taccuino di Alvise</h2><div class="colonne3">
+      <div><h3>Quello che so</h3><ul id="so"></ul></div>
+      <div><h3>Quello che penso</h3><p id="penso">…</p></div>
+      <div><h3>Quello che posso provare</h3><ul id="provo"></ul></div></div></div>
+    <div class="pannello" id="accusa" hidden><h2>Chi è stato?</h2><div class="persone" id="sospetti"></div></div>
+    <div class="pannello esito" id="fine" hidden><h2>Caso chiuso</h2><p>Era al telefono, pensava ad altro, e i biscotti sono finiti uno alla volta. Elisa ha chiuso la faccenda: «Assessore alla sicurezza. Dei biscotti, no.»</p><p><button class="bottone bottone--chiaro tasto" id="ancora" type="button">Rigioca</button> <a class="bottone" href="./">Altri giochi</a></p></div>
+  </div>
+</main>
+<footer class="piede">
+  <p class="piede__marchio">I gialli di <span>Alvise</span></p>
+  <p>© 2026 Guido Costalonga. Tutti i diritti riservati. Disegni realizzati con strumenti di intelligenza artificiale.</p>
+  <p>I giochi funzionano sul tuo dispositivo: non raccolgono dati e non salvano punteggi in rete.</p>
+</footer>
+<script src="../assets/giochi/comune.js"></script>
+<script src="../assets/giochi/biscotti.js"></script>
+<script src="../assets/lettura.js" defer></script>
+</body>
+</html>
