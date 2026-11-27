@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dov’è finito il pouff? · I gialli di Alvise</title>
+<meta name="description" content="La casa è sottosopra e mancano otto cose. Trovale nella tavola a china.">
+<link rel="canonical" href="https://igiallidialvise.it/giochi/pouff.html">
+<meta property="og:title" content="Dov’è finito il pouff? · I gialli di Alvise">
+<meta property="og:description" content="La casa è sottosopra e mancano otto cose. Trovale nella tavola a china.">
+<meta property="og:image" content="https://igiallidialvise.it/assets/img/giochi/inalatore.jpg">
+<link rel="icon" href="../assets/icona.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/stile.css">
+<link rel="stylesheet" href="../assets/giochi.css">
+</head>
+<body>
+<a class="salta" href="#contenuto">Vai al contenuto</a>
+<header class="testata">
+  <a class="testata__marchio" href="../">I gialli di <span>Alvise</span></a>
+  <nav aria-label="Sezioni del sito">
+    <a href="../#volumi">I libri</a>
+    <a href="../#famiglia">La famiglia</a>
+    <a href="../#assaggio">Primo capitolo</a>
+    <a href="./">Giochi</a>
+  </nav>
+</header>
+<main id="contenuto">
+  <div class="giochi-testa">
+    <a class="indietro" href="./">Tutti i giochi</a>
+    <p class="occhiello">Cerca e trova</p>
+    <h1>Dov’è finito il pouff?</h1>
+    <p id="regole">Si parte domattina e in casa non si trova più niente. Guarda bene il disegno e tocca gli otto oggetti dell’elenco. Se ti blocchi, chiedi un aiuto a papà.</p>
+    <p><button class="ascolta" type="button" data-ascolta="#regole">Ascolta le regole</button></p>
+  </div>
+  <div class="gioco">
+    <div class="pannello"><div class="fumetto" id="fumetto" aria-live="polite"></div>
+      <p style="margin:.6rem 0 0"><button class="ascolta" type="button" data-ascolta="fumetto">Ascolta</button></p></div>
+    <div class="barra"><span class="conta" id="conta"></span><span class="spazio"></span><button class="bottone bottone--chiaro tasto" id="aiuto" type="button">Chiedi a papà</button><button class="bottone bottone--chiaro tasto" id="ancora" type="button">Ricomincia</button></div>
+    <div class="scena" id="scena"><img src="../assets/img/giochi/casa.jpg" alt="Disegno a china di un salotto in disordine, con valigie aperte, divano, libreria, attaccapanni e scale" width="1600" height="1062"></div>
+    <div class="pannello" style="margin-top:1.4rem"><h2>Da trovare</h2><ul class="lista" id="lista" style="columns:2 14rem"></ul></div>
+    <div class="pannello esito" id="fine" hidden><h2>Trovato tutto</h2><p>Otto cose su otto. Adesso bisogna solo non perderle di nuovo prima di domattina.</p><p><a class="bottone" href="./">Altri giochi</a></p></div>
+  </div>
+</main>
+<footer class="piede">
+  <p class="piede__marchio">I gialli di <span>Alvise</span></p>
+  <p>© 2026 Guido Costalonga. Tutti i diritti riservati. Disegni realizzati con strumenti di intelligenza artificiale.</p>
+  <p>I giochi funzionano sul tuo dispositivo: non raccolgono dati e non salvano punteggi in rete.</p>
+</footer>
+<script src="../assets/giochi/comune.js"></script>
+<script src="../assets/giochi/pouff.js"></script>
+</body>
+</html>

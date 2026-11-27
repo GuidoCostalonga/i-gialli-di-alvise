@@ -1,0 +1,90 @@
+/* Giochi: stesse regole del sito, china e un solo rosso */
+.giochi-testa { max-width: var(--largo); margin: 0 auto; padding: clamp(2rem, 6vw, 4rem) 1rem 1rem; }
+.giochi-testa h1 { font-size: clamp(2.2rem, 6vw, 4rem); text-transform: uppercase; }
+.giochi-testa p { font-size: 1.25rem; max-width: 40rem; margin-top: 1rem; color: var(--grigio); }
+.indietro { display: inline-block; margin-bottom: 1.2rem; font-size: 1.05rem; }
+
+.vetrina { list-style: none; max-width: var(--largo); margin: 0 auto; padding: 1rem 1rem 4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr)); gap: 1.3rem; }
+.vetrina a { display: block; height: 100%; background: var(--carta); color: var(--china); text-decoration: none; border: 1px solid var(--china); box-shadow: 5px 5px 0 var(--china); padding: 1.3rem; transition: transform .15s, box-shadow .15s; }
+.vetrina a:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--rosso); color: var(--china); }
+.vetrina img { width: 6.5rem; height: 6.5rem; object-fit: contain; border-radius: 50%; border: 1px solid var(--china); background: #fff; margin-bottom: .9rem; }
+.vetrina h2 { font-size: 1.4rem; text-transform: uppercase; }
+.vetrina .mano { color: var(--rosso); margin: .2rem 0 .6rem; }
+.vetrina p { margin: 0; }
+
+.gioco { max-width: 60rem; margin: 0 auto; padding: 0 1rem 4rem; }
+.gioco [hidden] { display: none !important; }
+.pannello { background: var(--carta); border: 1px solid var(--china); box-shadow: 5px 5px 0 var(--china); padding: clamp(1rem, 3vw, 1.6rem); margin-bottom: 1.4rem; }
+.pannello h2 { font-size: 1.25rem; text-transform: uppercase; margin-bottom: .7rem; }
+.barra { display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; margin: 1rem 0; }
+.barra .spazio { flex: 1; }
+.conta { font-family: var(--mano); font-weight: 700; font-size: 1.6rem; color: var(--rosso); }
+.ascolta { background: none; border: 1px solid var(--china); border-radius: 2rem; padding: .3rem .9rem; font: inherit; font-size: 1rem; cursor: pointer; color: var(--china); }
+.ascolta:hover { background: var(--china); color: #fff; }
+.tasto { font-family: var(--titolo); }
+.gioco > .pannello:first-child { position: sticky; top: 3.6rem; z-index: 5; }
+
+.fumetto { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: .9rem; align-items: center; min-height: 5.5rem; }
+.fumetto img { width: 4.5rem; height: 4.5rem; border-radius: 50%; border: 1px solid var(--china); background: #fff; object-fit: cover; }
+.fumetto__nome { font-family: var(--titolo); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--rosso); margin: 0 0 .15rem; }
+.fumetto__testo { margin: 0; font-size: 1.25rem; line-height: 1.35; }
+
+.due-colonne { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 17rem); gap: 1.4rem; align-items: start; }
+.griglia { display: grid; grid-template-columns: repeat(auto-fill, minmax(5.4rem, 1fr)); gap: .6rem; }
+.oggetto { position: relative; background: #fff; border: 1px solid var(--china); padding: .35rem; cursor: pointer; aspect-ratio: 1; display: grid; place-items: center; font: inherit; transition: transform .12s, box-shadow .12s; }
+.oggetto:hover { transform: translateY(-2px); box-shadow: 3px 3px 0 var(--rosso); }
+.oggetto img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+.oggetto.fatto { visibility: hidden; }
+.oggetto.no { animation: scuoti .35s; border-color: var(--rosso); }
+.oggetto.scelto { box-shadow: 0 0 0 4px var(--rosso); }
+.oggetto.vuoto { border-style: dashed; cursor: default; background: transparent; }
+.oggetto.acceso { box-shadow: 0 0 0 5px var(--rosso); transform: scale(1.04); }
+@keyframes scuoti { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+
+.lista { list-style: none; margin: 0; padding: 0; font-family: var(--mano); font-weight: 700; font-size: 1.35rem; line-height: 1.2; color: var(--rosso); text-transform: uppercase; }
+.lista li { padding: .35rem 0 .35rem 1.9rem; position: relative; border-bottom: 1px dashed var(--filetto); }
+.lista li::before { content: ""; position: absolute; left: 0; top: .5rem; width: 1.1rem; height: 1.1rem; border: 2px solid var(--rosso); }
+.lista li.fatto { color: var(--grigio); text-decoration: line-through; }
+.lista li.fatto::after { content: "✓"; position: absolute; left: .15rem; top: .1rem; color: var(--china); font-family: var(--testo); text-decoration: none; }
+.lista small { display: block; font-size: .8em; text-transform: none; color: var(--china); font-weight: 500; }
+
+.scena { position: relative; border: 1px solid var(--china); background: #fff; cursor: crosshair; overflow: hidden; touch-action: manipulation; }
+.scena img { width: 100%; display: block; }
+.cerchio { position: absolute; border: 4px solid var(--rosso); border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; }
+.cerchio.sbagliato { border-color: var(--grigio); border-width: 2px; animation: svanisci .6s forwards; }
+.cerchio.aiuto { border-style: dashed; animation: batti 1s 3; }
+@keyframes svanisci { to { opacity: 0; transform: translate(-50%, -50%) scale(1.6); } }
+@keyframes batti { 50% { transform: translate(-50%, -50%) scale(1.15); } }
+
+.persone { display: grid; grid-template-columns: repeat(auto-fill, minmax(6.2rem, 1fr)); gap: .8rem; }
+.persona { background: none; border: 0; padding: 0; cursor: pointer; font: inherit; text-align: center; color: var(--china); }
+.persona img { width: 100%; border-radius: 50%; border: 1px solid var(--china); background: #fff; transition: box-shadow .12s; }
+.persona:hover img, .persona.scelto img { box-shadow: 0 0 0 4px var(--rosso); }
+.persona.sentito img { opacity: .55; }
+.persona span { display: block; font-family: var(--titolo); font-size: .78rem; text-transform: uppercase; margin-top: .35rem; }
+.colonne3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.colonne3 h3 { font-family: var(--mano); font-weight: 700; font-size: 1.5rem; color: var(--rosso); text-transform: none; border-bottom: 2px solid var(--china); padding-bottom: .2rem; margin-bottom: .5rem; }
+.colonne3 ul { margin: 0; padding-left: 1.1rem; font-size: 1.05rem; }
+.colonne3 p { font-family: var(--mano); font-size: 1.4rem; margin: 0; }
+
+.risposte { display: grid; gap: .7rem; }
+.risposta { text-align: left; background: #fff; border: 1px solid var(--china); padding: .9rem 1.1rem; font: inherit; font-size: 1.2rem; cursor: pointer; color: var(--china); }
+.risposta:hover { box-shadow: 4px 4px 0 var(--rosso); }
+.domanda { font-family: var(--titolo); font-size: clamp(1.4rem, 3.4vw, 2rem); line-height: 1.15; margin: 0 0 1.2rem; }
+.esito { text-align: center; }
+.esito img { width: 11rem; border-radius: 50%; border: 1px solid var(--china); box-shadow: 6px 6px 0 var(--rosso); margin: 0 auto 1.2rem; background: #fff; }
+.esito h2 { font-size: clamp(1.8rem, 5vw, 2.8rem); }
+.esito p { max-width: 34rem; margin: 1rem auto; font-size: 1.25rem; }
+
+.pose { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; max-width: 30rem; margin: 0 auto; }
+.pose .oggetto { aspect-ratio: 1; padding: .2rem; }
+.pose.blocco .oggetto { cursor: default; }
+
+@media (max-width: 46rem) {
+  .gioco > .pannello:first-child { top: 5.4rem; padding: .7rem .9rem; }
+  .fumetto { min-height: 4.5rem; }
+  .fumetto__testo { font-size: 1.1rem; }
+  .due-colonne { grid-template-columns: 1fr; }
+  .colonne3 { grid-template-columns: 1fr; }
+  .griglia { grid-template-columns: repeat(auto-fill, minmax(4.4rem, 1fr)); }
+}
