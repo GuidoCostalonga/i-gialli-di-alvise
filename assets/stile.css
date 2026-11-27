@@ -149,9 +149,9 @@ p { margin: 0 0 1em; }
 .citazione footer { color: var(--rosso); margin-top: .8rem; }
 
 /* Autore */
-.autore { max-width: 40rem; margin-left: max(1rem, calc((100% - var(--largo)) / 2)) !important; font-size: 1.28rem; }
-.sezione > .autore { margin-left: auto !important; margin-right: auto; max-width: var(--largo); }
-.autore p { max-width: 40rem; }
+.autore { display: grid; grid-template-columns: 13rem minmax(0, 40rem); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; font-size: 1.28rem; }
+.autore__foto { width: 100%; border: 1px solid var(--china); box-shadow: 6px 6px 0 var(--rosso); }
+.autore__testo p:last-child { margin-bottom: 0; }
 
 /* Piede */
 .piede { background: var(--china); color: #d8d4cb; padding: 3rem max(1rem, calc((100vw - var(--largo)) / 2)); font-size: 1rem; }
@@ -169,6 +169,8 @@ p { margin: 0 0 1em; }
   .volume:nth-child(even) .volume__copertina { order: 0; }
   .volume__copertina { max-width: 15rem; }
   .capitolo__testo { font-size: 1.18rem; }
+  .autore { grid-template-columns: 1fr; font-size: 1.18rem; }
+  .autore__foto { max-width: 11rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
