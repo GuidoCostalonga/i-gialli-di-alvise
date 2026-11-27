@@ -13,10 +13,9 @@
     { id: 'giacca', testo: 'Giacca a vento', quante: 1 },
     { id: 'ombrello', testo: 'Ombrello', quante: 1 },
   ];
-  const nomi = { carte: 'Carte d’identità', inalatore: 'Pouff', 'adattatore-europeo': 'Adattatore con due spinotti tondi', scarpe: 'Scarpe di Elisa', taccuino: 'Taccuino', caricatore: 'Caricatore', spazzolino: 'Spazzolino', giacca: 'Giacca a vento', ombrello: 'Ombrello', 'adattatore-inglese': 'Adattatore con tre spinotti piatti', passaporto: 'Passaporto', carciofi: 'Vasetto di carciofi', ferro: 'Ferro da stiro', wurstel: 'Wurstel' };
+  const nomi = { carte: 'Carte d’identità', inalatore: 'Pouff', 'adattatore-europeo': 'Adattatore con due spinotti tondi', scarpe: 'Scarpe di Elisa', taccuino: 'Taccuino', caricatore: 'Caricatore', spazzolino: 'Spazzolino', giacca: 'Giacca a vento', ombrello: 'Ombrello', 'adattatore-inglese': 'Adattatore con tre spinotti piatti', carciofi: 'Vasetto di carciofi', ferro: 'Ferro da stiro', wurstel: 'Wurstel' };
   const trappole = {
     'adattatore-inglese': ['elena', '«Gino, non comprarlo tu. Quello è inglese.»'],
-    passaporto: ['alvise', '«Non serve il passaporto, papà. È Germania. Basta la carta d’identità.»'],
     carciofi: ['elena', '«Emma. Il vasetto resta a casa.»'],
     ferro: ['elisa', '«Papà, andiamo in vacanza. Non in lavanderia.»'],
     wurstel: ['emma', '«Quelli no. Non mi piace dentro.»'],
