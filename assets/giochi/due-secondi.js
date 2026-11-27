@@ -8,7 +8,7 @@
   const tessera = (id, cliccabile) => {
     const b = crea(cliccabile ? 'button' : 'div', { class: 'oggetto', 'aria-label': nomi[id] });
     if (cliccabile) b.type = 'button';
-    b.append(crea('img', { src: IMG + 'giochi/' + id + '.jpg', alt: '', width: 260, height: 260 }));
+    b.append(crea('img', { src: IMG + 'giochi/' + id + '.webp', alt: '', width: 260, height: 260 }));
     return b;
   };
   const giro = async () => {
