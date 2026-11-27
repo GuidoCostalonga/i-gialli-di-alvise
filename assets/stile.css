@@ -27,6 +27,7 @@ body {
 }
 img { max-width: 100%; height: auto; display: block; }
 picture { display: contents; }
+picture > source { display: none; }
 a { color: var(--rosso-scuro); text-underline-offset: .18em; }
 a:hover { color: var(--china); }
 :focus-visible { outline: 3px solid var(--rosso); outline-offset: 3px; }
