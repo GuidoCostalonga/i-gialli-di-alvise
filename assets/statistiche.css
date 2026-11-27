@@ -1,0 +1,40 @@
+/* Pagina riservata delle statistiche. Stessa china e stesso rosso del sito. */
+.stat .stat__ingresso form { max-width: 26rem; }
+.stat__ingresso label { display: block; font-family: var(--titolo); text-transform: uppercase; letter-spacing: .04em; font-size: .85rem; margin-bottom: .5rem; }
+.stat__riga { display: flex; gap: .6rem; flex-wrap: wrap; }
+.stat__riga input { flex: 1 1 12rem; min-width: 0; font: inherit; padding: .65rem .8rem; border: 2px solid var(--china); background: #fff; color: var(--china); border-radius: 0; }
+.stat__riga input:focus-visible { outline: 3px solid var(--rosso); outline-offset: 2px; }
+.stat__avviso { min-height: 1.6em; margin-top: .8rem; color: var(--rosso-scuro); font-weight: 600; }
+
+.stat__barra { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; justify-content: space-between; border-bottom: 2px solid var(--china); padding-bottom: 1rem; margin-bottom: 1rem; }
+.stat__barra p { margin: 0; color: var(--grigio); }
+.stat__barra .bottone { margin-left: .4rem; }
+.stat__quadro h2 { margin-top: 2.6rem; }
+.stat .dentro > .stat__nota, .stat__nota { color: var(--grigio); font-size: 1rem; max-width: 44rem; }
+
+.stat__numeri { display: grid; grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr)); gap: 0; margin: 1.2rem 0 0; border: 2px solid var(--china); background: #fff; }
+.stat__numeri div { padding: 1rem 1.1rem; border-right: 1px solid var(--filetto); border-bottom: 1px solid var(--filetto); margin: -0 -1px -1px 0; }
+.stat__numeri dt { font-size: .95rem; color: var(--grigio); }
+.stat__numeri dd { margin: .1rem 0 0; font-family: var(--titolo); font-size: clamp(1.7rem, 4.5vw, 2.5rem); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.stat__numeri div:first-child dd { color: var(--rosso); }
+
+.stat__giorni { display: flex; align-items: flex-end; gap: 2px; height: 11rem; margin-top: 1.2rem; padding: .6rem .6rem 0; border: 2px solid var(--china); border-bottom-width: 4px; background: #fff; }
+.stat__colonna { flex: 1 1 0; min-width: 0; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; }
+.stat__colonna span { display: block; background: var(--filetto); }
+.stat__colonna span.esterni { background: var(--rosso); }
+.stat__colonna--oggi span:not(.esterni) { background: var(--grigio); }
+.stat__dettaglio { margin-top: .8rem; }
+.stat__dettaglio summary { cursor: pointer; color: var(--rosso-scuro); font-weight: 600; }
+.stat__scorri { overflow-x: auto; }
+.stat__quadro table { border-collapse: collapse; width: 100%; max-width: 30rem; margin-top: .8rem; font-variant-numeric: tabular-nums; }
+.stat__quadro th, .stat__quadro td { text-align: right; padding: .3rem .6rem; border-bottom: 1px solid var(--filetto); }
+.stat__quadro th:first-child, .stat__quadro td:first-child { text-align: left; }
+
+.stat__colonne { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); gap: 0 3rem; }
+.stat__elenco { list-style: none; padding: 0; margin: 1rem 0 0; }
+.stat__elenco li { position: relative; display: flex; justify-content: space-between; gap: 1rem; padding: .45rem .6rem; border-bottom: 1px solid var(--filetto); isolation: isolate; }
+.stat__elenco li::before { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--quota, 0%); background: var(--carta-scura); z-index: -1; }
+.stat__elenco li span:first-child { min-width: 0; overflow-wrap: anywhere; }
+.stat__elenco li span:last-child { font-family: var(--titolo); font-variant-numeric: tabular-nums; }
+.stat__elenco .vuoto { color: var(--grigio); font-style: italic; }
+.stat__elenco .vuoto::before { display: none; }

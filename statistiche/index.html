@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Statistiche · I gialli di Alvise</title>
+<meta name="description" content="Pagina riservata.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="../favicon.ico" sizes="48x48">
+<link rel="icon" href="../assets/icone/icona-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="../assets/icone/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/stile.css">
+<link rel="stylesheet" href="../assets/statistiche.css">
+</head>
+<body class="stat">
+<header class="testata">
+  <a class="testata__marchio" href="../">I gialli di <span>Alvise</span></a>
+</header>
+<main id="contenuto">
+  <div class="giochi-testa pagina-testa">
+    <p class="occhiello">Pagina riservata</p>
+    <h1>Chi bussa <span class="rosso">alla porta.</span></h1>
+    <p>Le visite a igiallidialvise.it, contate in forma anonima.</p>
+  </div>
+
+  <section class="sezione stat__ingresso" id="ingresso">
+  <div class="dentro">
+    <form id="modulo" autocomplete="off">
+      <label for="password">Password</label>
+      <div class="stat__riga">
+        <input id="password" name="password" type="password" autocomplete="current-password" required minlength="1" maxlength="200">
+        <button class="bottone" type="submit">Entra</button>
+      </div>
+      <p class="stat__avviso" id="avviso" role="alert" aria-live="assertive"></p>
+    </form>
+  </div>
+  </section>
+
+  <section class="sezione stat__quadro" id="quadro" hidden>
+  <div class="dentro">
+    <div class="stat__barra">
+      <p id="aggiornato"></p>
+      <div>
+        <button class="bottone bottone--chiaro" type="button" id="ricarica">Aggiorna</button>
+        <button class="bottone bottone--chiaro" type="button" id="esci">Esci</button>
+      </div>
+    </div>
+
+    <h2>Ingressi dall’esterno</h2>
+    <p class="stat__nota">Quante volte qualcuno è arrivato sul sito da fuori: da un motore di ricerca, da un collegamento, oppure scrivendo l’indirizzo.</p>
+    <dl class="stat__numeri" id="numeri-ingressi"></dl>
+
+    <h2>Pagine viste</h2>
+    <p class="stat__nota">Tutte le pagine aperte, compresi i passaggi da una pagina all’altra del sito.</p>
+    <dl class="stat__numeri" id="numeri-pagine"></dl>
+
+    <h2>Ultimi trenta giorni</h2>
+    <p class="stat__nota">In rosso gli ingressi dall’esterno, in grigio le altre pagine viste.</p>
+    <div class="stat__giorni" id="giorni" role="img" aria-label="Grafico delle visite degli ultimi trenta giorni"></div>
+    <details class="stat__dettaglio">
+      <summary>Gli stessi numeri in tabella</summary>
+      <div class="stat__scorri"><table id="tabella-giorni"><thead><tr><th scope="col">Giorno</th><th scope="col">Ingressi</th><th scope="col">Pagine viste</th></tr></thead><tbody></tbody></table></div>
+    </details>
+
+    <div class="stat__colonne">
+      <div>
+        <h2>Da dove arrivano</h2>
+        <p class="stat__nota">Ultimi trenta giorni. «Diretta» vuol dire indirizzo scritto a mano, preferiti, oppure applicazioni che non dichiarano la provenienza.</p>
+        <ol class="stat__elenco" id="provenienze"></ol>
+      </div>
+      <div>
+        <h2>Con che cosa leggono</h2>
+        <p class="stat__nota">Ultimi trenta giorni, su tutte le pagine viste.</p>
+        <ol class="stat__elenco" id="dispositivi"></ol>
+      </div>
+    </div>
+
+    <h2>Le pagine più lette</h2>
+    <p class="stat__nota">Ultimi trenta giorni.</p>
+    <ol class="stat__elenco" id="pagine"></ol>
+
+    <p class="stat__nota" id="dal"></p>
+  </div>
+  </section>
+</main>
+<script src="../assets/statistiche.js" defer></script>
+</body>
+</html>
