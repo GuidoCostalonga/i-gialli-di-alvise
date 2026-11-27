@@ -189,6 +189,41 @@ p { margin: 0 0 1em; }
   .capitolo details > summary { display: none; }
 }
 
+/* Pagine dei libri e domande e risposte */
+.briciole { font-size: 1rem; color: var(--grigio); margin-top: 0; margin-bottom: 1.5rem; }
+.libro .volume, .libro .volume:nth-child(even) { grid-template-columns: minmax(0, 19rem) minmax(0, 1fr); }
+.libro .volume:nth-child(even) .volume__copertina { order: 0; }
+@media (max-width: 46rem) { .libro .volume, .libro .volume:nth-child(even) { grid-template-columns: 1fr; } }
+.libro { padding-top: clamp(1.5rem, 4vw, 3rem); }
+.libro h1 { font-size: clamp(2rem, 5.4vw, 3.6rem); text-transform: uppercase; }
+.volume h3 a { color: inherit; text-decoration: none; }
+.volume h3 a:hover { color: var(--rosso); }
+.volume__testo .bottone { margin: 0 .4rem .5rem 0; }
+.dati { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; margin-top: 0; margin-bottom: 0; }
+.dati div { background: var(--carta); border: 1px solid var(--china); padding: 1rem 1.2rem; }
+.dati dt { font-family: var(--titolo); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--rosso); margin-bottom: .3rem; }
+.dati dd { margin: 0; }
+.indice { columns: 2 18rem; column-gap: 3rem; padding-left: 0; list-style: none; counter-reset: capitolo; }
+.indice li { counter-increment: capitolo; break-inside: avoid; padding: .45rem 0 .45rem 2.6rem; border-bottom: 1px solid var(--filetto); position: relative; }
+.indice li::before { content: counter(capitolo); position: absolute; left: 0; top: .3rem; font-family: var(--mano); font-weight: 700; font-size: 1.5rem; color: var(--rosso); width: 2rem; text-align: right; }
+.citato > p:first-child::first-line { font-variant-caps: normal; letter-spacing: 0; }
+.capitolo__testo.citato { border-left: 6px solid var(--rosso); padding-left: 1.4rem; }
+.capitolo__testo.citato > p:first-child::first-letter { float: none; font: inherit; color: inherit; padding: 0; }
+.altri { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.2rem; margin-bottom: 2rem; }
+.altri a { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 1rem; align-items: center; background: var(--carta); color: var(--china); text-decoration: none; border: 1px solid var(--china); box-shadow: 5px 5px 0 var(--china); padding: .9rem; }
+.altri a:hover { box-shadow: 8px 8px 0 var(--rosso); }
+.altri strong { display: block; font-family: var(--titolo); font-weight: 400; font-size: 1.15rem; text-transform: uppercase; line-height: 1.1; margin-bottom: .3rem; }
+.altri img { border: 1px solid rgba(27, 26, 24, .2); }
+.pagina-testa { max-width: var(--largo); margin: 0 auto; padding: clamp(1.5rem, 4vw, 3rem) 1rem 0; }
+.pagina-testa h1 { font-size: clamp(2.2rem, 6vw, 4rem); text-transform: uppercase; }
+.pagina-testa > p:last-child { font-size: 1.25rem; max-width: 42rem; margin-top: 1rem; color: var(--grigio); }
+.domande { padding-top: clamp(2rem, 5vw, 3rem); }
+.domanda-risposta { max-width: 46rem; margin-left: max(0px, calc((100% - var(--largo)) / 2)) !important; margin-right: auto !important; padding: 1.6rem 0; border-bottom: 1px solid var(--filetto); }
+.domanda-risposta h2 { font-size: clamp(1.3rem, 3vw, 1.7rem); margin-bottom: .8rem; }
+.domanda-risposta p { font-size: 1.22rem; }
+.domanda-risposta p:last-child { margin-bottom: 0; }
+.dopo-riquadro { margin-top: 1.6rem !important; }
+
 /* Lettura facilitata: righello e voce */
 .lf-apri { position: fixed; right: 1rem; bottom: 1rem; z-index: 60; background: var(--china); color: #fff; border: 2px solid #fff; border-radius: 2rem; padding: .7rem 1.1rem; font-family: var(--titolo); font-size: .85rem; letter-spacing: .03em; text-transform: uppercase; cursor: pointer; box-shadow: 0 4px 14px rgba(27, 26, 24, .35); }
 .lf-apri:hover, .lf-apri[aria-expanded="true"] { background: var(--rosso); }
