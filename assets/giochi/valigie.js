@@ -1,7 +1,7 @@
 // Quattro valigie e mezza: riempi le valigie seguendo la lista della mamma.
 (() => {
   const { $, crea, mescola, fumetto, nota, IMG } = G;
-  const I = (n) => IMG + 'giochi/' + n + '.jpg';
+  const I = (n) => IMG + 'giochi/' + n + '.webp';
   const voci = [
     { id: 'carte', testo: 'Carte d’identità', nota: 'Germania: non serve il passaporto, Gino', quante: 1 },
     { id: 'inalatore', testo: 'Pouff × 3', nota: 'due indispensabili, uno di scorta', quante: 3 },

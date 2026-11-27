@@ -2,12 +2,12 @@
 const G = (() => {
   const IMG = '../assets/img/';
   const persone = {
-    alvise: { nome: 'Alvise', img: IMG + 'ritratto-alvise.jpg' },
-    elisa: { nome: 'Elisa', img: IMG + 'ritratto-elisa.jpg' },
-    emma: { nome: 'Emma', img: IMG + 'ritratto-emma.jpg' },
-    elena: { nome: 'Mamma Elena', img: IMG + 'ritratto-elena.jpg' },
-    gino: { nome: 'Papà Gino', img: IMG + 'ritratto-gino.jpg' },
-    vidoni: { nome: 'Il comandante Vidoni', img: IMG + 'ritratto-vidoni.jpg' },
+    alvise: { nome: 'Alvise', img: IMG + 'ritratto-alvise.webp' },
+    elisa: { nome: 'Elisa', img: IMG + 'ritratto-elisa.webp' },
+    emma: { nome: 'Emma', img: IMG + 'ritratto-emma.webp' },
+    elena: { nome: 'Mamma Elena', img: IMG + 'ritratto-elena.webp' },
+    gino: { nome: 'Papà Gino', img: IMG + 'ritratto-gino.webp' },
+    vidoni: { nome: 'Il comandante Vidoni', img: IMG + 'ritratto-vidoni.webp' },
   };
   const $ = (s, r = document) => r.querySelector(s);
   const crea = (tag, attr = {}, testo) => {
