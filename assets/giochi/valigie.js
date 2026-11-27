@@ -36,7 +36,7 @@
     Object.keys(trappole).forEach((t) => pezzi.push(t));
     $('#stanza').replaceChildren(...mescola(pezzi).map((id) => {
       const b = crea('button', { class: 'oggetto', type: 'button', 'aria-label': nomi[id] });
-      b.append(crea('img', { src: I(id), alt: '' }));
+      b.append(crea('img', { src: I(id), alt: '', width: 260, height: 260 }));
       b.addEventListener('click', () => tocca(id, b));
       return b;
     }));
