@@ -322,3 +322,23 @@ p { margin: 0 0 1em; }
 
 /* Nessuno sbordo laterale da elementi ruotati o ombre */
 main { overflow-x: clip; }
+
+/* Carattere ad alta leggibilità (OpenDyslexic), attivabile dalla lettura facilitata.
+   I file vengono scaricati solo quando il carattere è acceso. */
+@font-face { font-family: "OpenDyslexic"; src: url("fonts/opendyslexic-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "OpenDyslexic"; src: url("fonts/opendyslexic-latin-700-normal.woff2") format("woff2"); font-weight: 600 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "OpenDyslexic"; src: url("fonts/opendyslexic-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+html.lf-carattere { --testo: "OpenDyslexic", "Crimson Pro", Georgia, serif; --mano: "OpenDyslexic", "Crimson Pro", Georgia, serif; }
+html.lf-carattere body { font-size: 1rem; line-height: 1.75; }
+html.lf-carattere p, html.lf-carattere li, html.lf-carattere dd { text-align: left; hyphens: manual; overflow-wrap: break-word; }
+html.lf-carattere .mano { font-size: 1em; font-weight: 700; transform: none; }
+html.lf-carattere .capitolo__testo { font-size: 1.05rem; line-height: 1.9; hyphens: manual; }
+html.lf-carattere .capitolo__testo p { text-indent: 0; margin-bottom: 1em; }
+html.lf-carattere .capitolo__testo > p:first-child::first-line { font-variant-caps: normal; letter-spacing: inherit; }
+html.lf-carattere .giochi-testa p, html.lf-carattere .pagina-testa > p:last-child, html.lf-carattere .apertura__sommario, html.lf-carattere .sezione__testa p:last-of-type, html.lf-carattere .lettera, html.lf-carattere .origine, html.lf-carattere .autore, html.lf-carattere .domanda-risposta p, html.lf-carattere .tendina li a { font-size: 1.05rem; }
+html.lf-carattere .citazione p { font-size: 1.15rem; font-style: normal; line-height: 1.6; }
+html.lf-carattere .scheda__cit, html.lf-carattere .lista, html.lf-carattere .conta, html.lf-carattere .colonne3 h3, html.lf-carattere .colonne3 p, html.lf-carattere .indice li::before, html.lf-carattere .volume__numero .mano { font-size: 1rem; }
+html.lf-carattere .lista { text-transform: none; }
+html.lf-carattere .lettera__grazie { font-size: 2.4rem !important; }
+html.lf-carattere .fumetto__testo, html.lf-carattere .risposta { font-size: 1.05rem; }
+html.lf-carattere .volume__sotto, html.lf-carattere .scheda__dote, html.lf-carattere .tendina li.sotto a { font-style: normal; }
