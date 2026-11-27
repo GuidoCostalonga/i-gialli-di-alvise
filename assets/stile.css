@@ -240,6 +240,14 @@ p { margin: 0 0 1em; }
 .voce dd { margin: 0; }
 .piede__menu a { color: #fff; }
 
+/* Ringraziamento */
+.lettera { max-width: 40rem; font-size: 1.32rem; line-height: 1.6; border-left: 6px solid var(--rosso); padding-left: clamp(1rem, 4vw, 2rem); margin-left: max(0px, calc((100% - var(--largo)) / 2)) !important; margin-right: auto !important; }
+.lettera__grazie { font-size: clamp(3rem, 9vw, 5rem) !important; color: var(--rosso); margin: 1rem 0 0; transform: rotate(-2deg); display: inline-block; }
+.lettera__firma { font-family: var(--titolo); font-size: .95rem; letter-spacing: .08em; text-transform: uppercase; margin: 0; }
+.volontari { font-size: 1.3rem; max-width: 44rem; margin-top: 2rem !important; }
+.nota-indipendenza { color: var(--grigio); font-size: 1.05rem; max-width: 44rem; }
+.riquadro p { margin-bottom: .6rem; }
+
 /* Lettura facilitata: righello e voce */
 .lf-apri { position: fixed; right: 1rem; bottom: 1rem; z-index: 60; background: var(--china); color: #fff; border: 2px solid #fff; border-radius: 2rem; padding: .7rem 1.1rem; font-family: var(--titolo); font-size: .85rem; letter-spacing: .03em; text-transform: uppercase; cursor: pointer; box-shadow: 0 4px 14px rgba(27, 26, 24, .35); }
 .lf-apri:hover, .lf-apri[aria-expanded="true"] { background: var(--rosso); }
@@ -273,3 +281,7 @@ p { margin: 0 0 1em; }
 .lf-voce-attiva main :is(h1, h2, h3, p, li, figcaption):hover { outline: 1px dashed var(--rosso); outline-offset: 3px; }
 .lf-letto { background: #ffe9a8 !important; box-shadow: 0 0 0 4px #ffe9a8; color: var(--china) !important; }
 @media print { .lf-apri, .lf-pannello, .lf-ombra, .lf-fascia, .lf-ascolta { display: none !important; } }
+
+/* Allineamento a sinistra dei testi stretti dentro le sezioni */
+.sezione > .fonti, .sezione > .volontari, .sezione > .nota-indipendenza { margin-left: max(0px, calc((100% - var(--largo)) / 2)) !important; margin-right: auto !important; }
+.sezione > .fonti { max-width: 44rem; }
