@@ -141,14 +141,26 @@ p { margin: 0 0 1em; }
 .riquadro p { max-width: 46rem; }
 .fonti { font-size: 1.05rem; color: var(--grigio); margin: 1.4rem 0 0; padding-top: 1rem; border-top: 1px solid var(--filetto); }
 
+/* Come è nata la serie */
+.origine { font-size: 1.28rem; }
+.origine > p { max-width: 40rem; }
+.citazione { margin: 2rem 0; padding: 0 0 0 1.4rem; border-left: 6px solid var(--rosso); max-width: 46rem; }
+.citazione p { font-size: clamp(1.4rem, 2.8vw, 1.85rem); line-height: 1.3; font-style: italic; margin: 0; }
+.citazione footer { color: var(--rosso); margin-top: .8rem; }
+
 /* Autore */
-.autore { max-width: 40rem; margin-left: max(1rem, calc((100% - var(--largo)) / 2)) !important; font-size: 1.28rem; }
-.sezione > .autore { margin-left: auto !important; margin-right: auto; max-width: var(--largo); }
-.autore p { max-width: 40rem; }
+.autore { display: grid; grid-template-columns: 13rem minmax(0, 40rem); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; font-size: 1.28rem; }
+.autore__foto { width: 100%; border: 1px solid var(--china); box-shadow: 6px 6px 0 var(--rosso); }
+.autore__testo p:last-child { margin-bottom: 0; }
+
+.contatti { margin-top: 1.6rem; padding: 1.1rem 1.3rem; background: var(--carta); border: 1px solid var(--china); border-left: 8px solid var(--rosso); }
+.contatti__titolo { display: block; font-family: var(--titolo); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--rosso); margin-bottom: .3rem; }
+.contatti a { font-weight: 600; white-space: nowrap; }
 
 /* Piede */
 .piede { background: var(--china); color: #d8d4cb; padding: 3rem max(1rem, calc((100vw - var(--largo)) / 2)); font-size: 1rem; }
 .piede p { max-width: 44rem; margin-bottom: .7rem; }
+.piede a { color: #fff; }
 .piede__marchio { color: #fff; font-size: 1.3rem; margin-bottom: 1.2rem !important; }
 
 @media (max-width: 46rem) {
@@ -162,6 +174,8 @@ p { margin: 0 0 1em; }
   .volume:nth-child(even) .volume__copertina { order: 0; }
   .volume__copertina { max-width: 15rem; }
   .capitolo__testo { font-size: 1.18rem; }
+  .autore { grid-template-columns: 1fr; font-size: 1.18rem; }
+  .autore__foto { max-width: 11rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
