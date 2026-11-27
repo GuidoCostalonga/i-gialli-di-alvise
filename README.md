@@ -12,7 +12,11 @@ Sito della serie di romanzi gialli per ragazzi «I gialli di Alvise» di Guido C
 | `assets/fonts/` | Caratteri Crimson Pro, Caveat e Archivo Black, serviti dal sito stesso |
 | `CNAME` | Dominio personalizzato per GitHub Pages |
 
-La pagina non usa strumenti di tracciamento né risorse esterne.
+Il sito non usa cookie né servizi di statistica di terzi. Conta le visite in forma anonima
+(pagina, giorno, sito di provenienza, tipo di dispositivo) con due funzioni di servizio su Supabase:
+il codice sta in `supabase/`, la spiegazione per i lettori in `riservatezza/`.
+La pagina `statistiche/` mostra i numeri ed è protetta da una password custodita nel segreto
+`STATISTICHE_PASSWORD` del progetto Supabase, mai nel codice.
 
 ## Regole
 
